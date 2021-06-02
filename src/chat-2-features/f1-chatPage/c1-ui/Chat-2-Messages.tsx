@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { messagesSelector } from './../f2-bll/chat-selector';
+import { messagesSelector } from '../c2-bll/chat-selector';
 import Message from './Chat-3-Message';
-
 
 const Messages: React.FC = () => {
     const chatMessages = useSelector(messagesSelector)
@@ -24,7 +23,7 @@ const Messages: React.FC = () => {
         }
     }, [chatMessages])
 
-    let messagesElement = chatMessages.map((m, index) => <Message
+    let messagesElement = chatMessages.map((m: any, index:any) => <Message
         key={index} userId={m.userId}
         message={m.message} photo={m.photo} userName={m.userName} />)
 

@@ -42,7 +42,6 @@ function createChannel() {
     webSocket.addEventListener('open', openHandler)
 }
 
-
 export const chatWebSocketApi = {
     start() {
         createChannel()
@@ -73,7 +72,7 @@ export const chatWebSocketApi = {
         webSocket?.send(newMessage)
     },
 }
-
+ 
 
 export type ChatResponseType = {
     message: string

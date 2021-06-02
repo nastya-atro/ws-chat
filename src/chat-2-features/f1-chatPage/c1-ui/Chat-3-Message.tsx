@@ -1,6 +1,6 @@
 import { Avatar, Grid, makeStyles, createStyles, Theme } from '@material-ui/core';
 import React from 'react';
-import { ChatResponseType } from '../f3-dal/chat-api';
+import { ChatResponseType } from '../c3-dal/chat-api';
 import s from './Chat.module.css'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme: Theme) =>
             width: theme.spacing(7),
             height: theme.spacing(7),
             marginTop: theme.spacing(1),
-
         },
     }),
 );
@@ -25,7 +24,6 @@ const Message: React.FC<ChatResponseType> = (props) => {
                     <Grid item className={s.chat_userName}>{props.userName}</Grid>
                 </Grid>
             </Grid>
-
             <Grid item xs>
                 <Grid item xs className={s.chat_userMessage}>{props.message}</Grid></Grid>
         </Grid>

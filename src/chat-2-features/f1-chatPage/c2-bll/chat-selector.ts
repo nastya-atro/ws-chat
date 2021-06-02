@@ -1,4 +1,5 @@
-import { AppStateType } from "../../chat-1-main/m3-dal/redux-store"
+import { AppStateType } from "../../../chat-1-main/m2-bll/redux-store"
+
 
 export const messagesSelector=(state: AppStateType)=>{
     return state.chat.chatMessages

@@ -2,30 +2,24 @@ import { TextField, Theme, makeStyles, createStyles, Button, Grid } from '@mater
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { sendmessageThunk } from '../f2-bll/chat-reducer';
-import { statusSelector } from './../f2-bll/chat-selector';
 import s from './Chat.module.css'
 import Icon from '@material-ui/core/Icon';
-
+import { sendmessageThunk } from '../c2-bll/chat-reducer';
+import { statusSelector } from '../c2-bll/chat-selector';
 
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         textField: {
-           
-           width: '88%'
-
+            width: '88%',
+            backgroundColor: 'rgba(255, 242, 128, 0.356)'
         },
         button: {
             width: '90%',
             marginLeft: '8px',
             padding: '13px 5px',
-            
-            
-
-
+            backgroundColor: 'rgba(255, 242, 128, 0.986)'
         }
-
     }),
 );
 
@@ -50,14 +44,14 @@ const FormAddMessages: React.FC = () => {
             <form noValidate autoComplete="off">
                 <Grid container alignItems="center">
                     <Grid item xs={2}>
-                    <Button disabled={status !== 'ready'} onClick={sendMessage}
-                    variant="contained" color="inherit" className={classes.button} endIcon={<Icon>send</Icon>}>Send</Button>
+                        <Button disabled={status !== 'ready'} onClick={sendMessage}
+                            variant="contained" color="inherit" className={classes.button} endIcon={<Icon>send</Icon>}>Send</Button>
                     </Grid>
-            <Grid item xs>
-            <TextField className={classes.textField} id="outlined-basic" 
-            variant="outlined" label="Your message..." 
-            onChange={(e) => setMessage(e.currentTarget.value)} value={message} />
-            </Grid> 
+                    <Grid item xs>
+                        <TextField className={classes.textField} id="outlined-basic"
+                            variant="outlined" label="Your message..."
+                            onChange={(e) => setMessage(e.currentTarget.value)} value={message} />
+                    </Grid>
                 </Grid>
             </form>
         </div>

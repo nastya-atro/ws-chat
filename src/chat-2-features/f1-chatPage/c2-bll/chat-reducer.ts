@@ -1,6 +1,7 @@
 import { Dispatch } from "redux";
-import { CommonActionsTypes, CommonThunkType } from "../../chat-1-main/m3-dal/redux-store";
-import { ChatResponseType, chatWebSocketApi, StatusType } from "../f3-dal/chat-api"
+import { CommonActionsTypes, CommonThunkType } from "../../../chat-1-main/m2-bll/redux-store";
+import { ChatResponseType, chatWebSocketApi, StatusType } from './../c3-dal/chat-api'
+  
 
 let initialState = {
     chatMessages: [] as ChatResponseType[],
@@ -23,7 +24,7 @@ const chatReducer = (state: InitialStateType = initialState, action: ActionsType
         default: return state
     }
 }
-
+ 
 type ActionsTypes = CommonActionsTypes<typeof actions>
 type ThunkType = CommonThunkType<ActionsTypes>
 

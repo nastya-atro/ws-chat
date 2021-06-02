@@ -1,9 +1,14 @@
 import { Action, applyMiddleware, combineReducers, createStore } from "redux";
 import thunkMiddleware, { ThunkAction} from "redux-thunk";
-import chatReducer from "../../chat-2-features/f2-bll/chat-reducer";
+import chatReducer from "../../chat-2-features/f1-chatPage/c2-bll/chat-reducer";
+import loginReducer from './../../chat-2-features/f2-login/l2-bll/login-reducer';
+import appReducer from './app-reducer';
+
 
 let rootReducer = combineReducers({
-    chat: chatReducer
+    chat: chatReducer,
+    login: loginReducer,
+    app: appReducer
 })
 
 type RootReducerType = typeof rootReducer
